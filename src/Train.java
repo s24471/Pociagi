@@ -51,7 +51,7 @@ public class Train {
         logic.interrupt();
     }
     public void finished(){
-        System.out.println("Dojechano do " + nextStop.name);
+        System.out.println(name + " dojechano do " + nextStop.name);
         ready = false;
         curr.finished();
         left = 0;
@@ -73,6 +73,7 @@ public class Train {
                 } catch (InterruptedException e) {
                     if (ready) {
                         while (left > 0) {
+                            System.out.println(name + " jedzie po " + curr.s1.name + "-" + curr.s2.name + " " + left/toDrive*100+"%");
                             drive();
                             sleep(1);
                         }

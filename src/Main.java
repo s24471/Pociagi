@@ -6,10 +6,8 @@ public class Main {
     public static void main(String[] args) {
         stations = new ArrayList<>();
         stations.add(new Station("s1", new HashMap<>()));
-
         stations.add(new Station("s3", new HashMap<>()));
         HashMap<Station, Integer> map = new HashMap<>();
-
         map.put(stations.get(0), 10);
         map.put(stations.get(1), 20);
         stations.add(new Station("s2", map));
@@ -18,7 +16,8 @@ public class Main {
             System.out.println(stations.get(i).name);
         }
 
-        Train train = new Train(stations.get(0), stations.get(1), 0, 8, "t1", 0, 0 ,0);
+        new Train(stations.get(0), stations.get(1), 0, 8, "t1", 0, 0 ,0);
+        new Train(stations.get(1), stations.get(0), 0, 3, "t2", 0, 0 ,0);
         for (Station s: findRoute(stations.get(0), stations.get(1)))
         {
             System.out.println(s.name);
